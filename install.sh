@@ -82,7 +82,7 @@ fi
 
 # --- Toolchain -------------------------------------------------------------
 if command -v mise &>/dev/null; then
-  info "installing mise tools (node, go, gh, claude, codex, opencode)..."
+  info "installing mise tools (node, go, opencode)..."
   run mise install
 else
   warn "mise not found, skipping tool install (see README)"

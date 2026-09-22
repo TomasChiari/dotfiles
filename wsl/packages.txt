@@ -11,7 +11,7 @@
 #
 # 2) Not in apt (or too old) — install with their official methods:
 #
-#    mise (manages node, go, gh, claude, codex, opencode):
+#    mise (manages node, go, opencode):
 #      curl https://mise.run | sh
 #
 #    starship:

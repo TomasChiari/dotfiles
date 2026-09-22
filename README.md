@@ -10,7 +10,7 @@ Targets: macOS (zsh + Ghostty) and WSL Ubuntu (bash). Source machine: Arch/Omarc
 | `shared/nvim` | LazyVim config (plugins pinned via `lazy-lock.json`) |
 | `shared/tmux` | tmux config (prefix `C-Space`, vi copy mode, Alt-navigation) |
 | `shared/starship.toml` | prompt |
-| `shared/mise` | tool versions: node, go, gh, claude, codex, opencode |
+| `shared/mise` | tool versions: node, go, opencode |
 | `shared/shell` | aliases/env/init shared by bash and zsh (ported from Omarchy) |
 | `opencode` | opencode config (provider `local-server`, key via `{file:}`) |
 | `mac` | `.zshrc`, Ghostty config, `Brewfile` |
