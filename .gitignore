@@ -1,0 +1,13 @@
+# Secrets — never commit
+*.secret
+secrets/
+local-ai-key
+
+# OS noise
+.DS_Store
+
+# Backups created by install.sh
+*.bak.*
+
+# nvim local state
+shared/nvim/lazy-lock.json.local

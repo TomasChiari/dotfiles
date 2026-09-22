@@ -1,0 +1,57 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "local-server": {
+      "name": "Local IA Server",
+      "options": {
+        "baseURL": "https://local.tomaschiari.site/v1",
+        "apiKey": "{file:~/.secrets/local-ai-key}",
+        "timeout": false,
+        "chunkTimeout": false,
+        "headerTimeout": false
+      },
+      "models": {
+        "gemma-4-12b-uncensored": {
+          "name": "Gemma 4 12B Uncensored",
+          "tool_call": true,
+          "reasoning": true,
+          "limit": {
+            "context": 98304,
+            "output": 8192
+          }
+        },
+        "qwen3.8-27b-uncensored": {
+          "name": "Qwen 3.8 27B Uncensored",
+          "tool_call": true,
+          "reasoning": true,
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          },
+          "variants": {
+            "thinking": {
+              "temperature": 1.0,
+              "top_p": 0.95
+            },
+            "instruct": {
+              "temperature": 0.7,
+              "top_p": 0.8
+            }
+          }
+        }
+      }
+    }
+  },
+  "agent": {
+    "plan": {
+      "model": "local-server/qwen3.8-27b-uncensored",
+      "variant": "thinking"
+    },
+    "build": {
+      "model": "local-server/qwen3.8-27b-uncensored",
+      "variant": "instruct"
+    }
+  },
+  "model": "local-server/qwen3.8-27b-uncensored",
+  "small_model": "local-server/gemma-4-12b-uncensored"
+}

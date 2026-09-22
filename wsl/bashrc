@@ -1,0 +1,16 @@
+# ~/.bashrc — WSL (Ubuntu)
+# Symlinked from the dotfiles repo. Shared logic lives in shared/shell/.
+
+# If not running interactively, don't do anything
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+DOTFILES="${DOTFILES:-$HOME/Documents/repos/dotfiles}"
+
+source "$DOTFILES/shared/shell/env.sh"
+source "$DOTFILES/shared/shell/aliases.sh"
+source "$DOTFILES/shared/shell/init.sh"
+
+# Add your own machine-specific exports, aliases, and functions below.

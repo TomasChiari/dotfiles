@@ -1,0 +1,24 @@
+# macOS packages — install with: brew bundle --file mac/Brewfile
+
+# Core terminal toolchain
+brew "neovim"
+brew "tmux"
+brew "starship"
+brew "mise"
+brew "fzf"
+brew "ripgrep"
+brew "fd"
+brew "bat"
+brew "eza"
+brew "zoxide"
+brew "btop"
+brew "lazygit"
+brew "lazydocker"
+brew "git"
+
+# GNU find with -printf (needed by the `sff` helper)
+brew "findutils"
+
+# Terminal + font
+cask "ghostty"
+cask "font-jetbrains-mono-nerd-font"

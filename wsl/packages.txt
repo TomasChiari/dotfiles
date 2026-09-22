@@ -1,0 +1,32 @@
+# WSL (Ubuntu) packages.
+#
+# 1) Available via apt:
+#      sudo apt update
+#      sudo apt install -y neovim tmux fzf ripgrep fd-find bat btop git curl
+#
+#    Ubuntu quirks:
+#      - `bat` installs as `batcat`  -> add:  alias bat=batcat
+#      - `fd` installs as `fdfind`   -> add:  alias fd=fdfind
+#      (aliases handled automatically in shared/shell/aliases.sh)
+#
+# 2) Not in apt (or too old) — install with their official methods:
+#
+#    mise (manages node, go, gh, claude, codex, opencode):
+#      curl https://mise.run | sh
+#
+#    starship:
+#      curl -sS https://starship.rs/install.sh | sh
+#
+#    eza:
+#      https://github.com/eza-community/eza/blob/main/INSTALL.md#debian-and-ubuntu
+#
+#    zoxide:
+#      curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+#
+#    lazygit:
+#      https://github.com/jesseduffield/lazygit#ubuntu
+#
+# 3) Nerd Font (needed by nvim/tmux icons):
+#    Install "JetBrainsMono Nerd Font" in *Windows* and select it in
+#    Windows Terminal -> Settings -> Ubuntu -> Appearance -> Font face.
+#    Download: https://www.nerdfonts.com/font-downloads
