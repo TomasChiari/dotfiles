@@ -19,10 +19,14 @@ Targets: macOS (zsh + Ghostty) and WSL Ubuntu (bash). Source machine: Arch/Omarc
 ## Install
 
 ```bash
-git clone <this-repo> ~/Documents/repos/dotfiles
-cd ~/Documents/repos/dotfiles
+git clone <this-repo> <anywhere>/dotfiles   # clone wherever you like
+cd <anywhere>/dotfiles
 ./install.sh            # add --dry-run to preview
 ```
+
+The shell rc files resolve the repo location from the symlink target at
+startup, so the clone path does not matter. Set `$DOTFILES` explicitly only
+if you ever bypass the symlinks.
 
 The installer backs up any existing config to `*.bak.<timestamp>` before linking.
 

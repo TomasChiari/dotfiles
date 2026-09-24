@@ -1,7 +1,18 @@
 # ~/.zshrc — macOS
 # Symlinked from the dotfiles repo. Shared logic lives in shared/shell/.
 
-DOTFILES="${DOTFILES:-$HOME/Documents/repos/dotfiles}"
+# Locate the dotfiles repo: use $DOTFILES if set, otherwise resolve this
+# symlink back into the repo (works no matter where the repo is cloned).
+if [[ -z "${DOTFILES:-}" ]]; then
+  _src="${(%):-%N}"
+  while [[ -L "$_src" ]]; do
+    _dir="$(cd -P "$(dirname "$_src")" >/dev/null 2>&1 && pwd)"
+    _src="$(readlink "$_src")"
+    [[ "$_src" != /* ]] && _src="$_dir/$_src"
+  done
+  DOTFILES="$(cd -P "$(dirname "$_src")/.." >/dev/null 2>&1 && pwd)"
+  unset _src _dir
+fi
 
 source "$DOTFILES/shared/shell/env.sh"
 source "$DOTFILES/shared/shell/aliases.sh"

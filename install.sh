@@ -99,3 +99,20 @@ fi
 
 info "done."
 info "remember: put your local AI server key in ~/.secrets/local-ai-key (chmod 600)"
+
+# --- Shell check -----------------------------------------------------------
+if [[ "$OS" == "Linux" ]] && $IS_WSL; then
+  current_shell="$(getent passwd "$USER" | cut -d: -f7)"
+  bash_path="$(command -v bash)"
+  if [[ "$current_shell" != "$bash_path" ]]; then
+    warn "you are using $(basename "$current_shell") but the WSL config is made for bash."
+    if $DRY_RUN; then
+      printf '  $ sudo chsh -s %s %s\n' "$bash_path" "$USER"
+    elif sudo chsh -s "$bash_path" "$USER"; then
+      info "login shell changed to bash (restarts on next login)"
+    else
+      warn "could not change the shell. To do it manually run:"
+      warn "  sudo chsh -s $bash_path \$USER"
+    fi
+  fi
+fi
