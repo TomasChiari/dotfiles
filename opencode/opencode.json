@@ -42,16 +42,6 @@
       }
     }
   },
-  "agent": {
-    "plan": {
-      "model": "local-server/qwen3.8-27b-uncensored",
-      "variant": "thinking"
-    },
-    "build": {
-      "model": "local-server/qwen3.8-27b-uncensored",
-      "variant": "instruct"
-    }
-  },
   "model": "local-server/qwen3.8-27b-uncensored",
   "small_model": "local-server/gemma-4-12b-uncensored"
 }
